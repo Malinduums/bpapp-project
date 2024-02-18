@@ -25,8 +25,8 @@ class InputScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 10.0),
               child: Image.asset(
-                'assets/inpscr.png', // Replace with your image path
-                height: 250, // Adjust height as needed
+                'assets/inpscr.png',
+                height: 250,
                 fit: BoxFit.cover,
               ),
             ),

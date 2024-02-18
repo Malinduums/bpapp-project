@@ -4,13 +4,12 @@ import 'package:get/get.dart';
 class InformationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // Getting arguments passed from InputScreen
     final List<int> data = Get.arguments;
 
-    // Determine the blood pressure category
+    // blood pressure category
     String category = determineCategory(data[0], data[1]);
 
-    // Define image paths for each category
+    // image paths
     String imagePath = '';
     String resultMessage = '';
     switch (category) {
@@ -47,7 +46,7 @@ class InformationScreen extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/bgimg.jpg'), // Change to your image path
+            image: AssetImage('assets/bgimg.jpg'),
             fit: BoxFit.cover,
           ),
         ),
@@ -57,7 +56,7 @@ class InformationScreen extends StatelessWidget {
             children: [
               Image.asset(
                 imagePath,
-                height: 150, // Increase the height as needed
+                height: 150,
               ),
               SizedBox(height: 20),
               Text(
@@ -65,7 +64,7 @@ class InformationScreen extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  color: Colors.white.withOpacity(0.5), // Change text color
+                  color: Colors.white.withOpacity(0.5),
                 ),
               ),
               Text(
@@ -73,7 +72,7 @@ class InformationScreen extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
-                  color: Colors.white, // Change text color
+                  color: Colors.white,
                 ),
               ),
               SizedBox(height: 20),
@@ -82,7 +81,7 @@ class InformationScreen extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  color: Colors.white.withOpacity(0.5), // Change text color
+                  color: Colors.white.withOpacity(0.5),
                 ),
               ),
               Text(
@@ -90,7 +89,7 @@ class InformationScreen extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 20,
-                  color: Colors.white, // Change text color
+                  color: Colors.white,
                 ),
               ),
             ],
@@ -100,7 +99,7 @@ class InformationScreen extends StatelessWidget {
     );
   }
 
-  // Function to determine blood pressure category
+  // Choosing blood pressure category
   String determineCategory(int systolic, int diastolic) {
     if (systolic < 120 && diastolic < 80) {
       return 'Normal';
